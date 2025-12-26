@@ -131,10 +131,19 @@
             </div>
           </div>
 
-          <!-- Product Description -->
-          <div class="product-description">
-            {{ product.description }}
+          <!-- Delivery Info -->
+          {% if section.settings.show_delivery %}
+          <div class="delivery-card p-3 mb-3">
+            <div class="delivery-icon">
+              <i class="ti ti-truck-delivery"></i>
+            </div>
+            <div class="delivery-info">
+              <span class="delivery-title">Free Delivery</span>
+              <span class="delivery-time">{{ section.settings.delivery_time }}</span>
+              <span class="order-by">{{ section.settings.order_by }}</span>
+            </div>
           </div>
+          {% endif %}
 
           <!-- Variant Selector -->
           {% if product.has_only_default_variant == false %}
@@ -193,20 +202,6 @@
               <i class="ti ti-bolt me-2"></i>Buy Now
             </button>
           </div>
-
-          <!-- Delivery Info -->
-          {% if section.settings.show_delivery %}
-          <div class="delivery-card">
-            <div class="delivery-icon">
-              <i class="ti ti-truck-delivery"></i>
-            </div>
-            <div class="delivery-info">
-              <span class="delivery-title">Free Delivery</span>
-              <span class="delivery-time">{{ section.settings.delivery_time }}</span>
-              <span class="order-by">{{ section.settings.order_by }}</span>
-            </div>
-          </div>
-          {% endif %}
 
           <!-- Trust Badges -->
           {% if section.settings.show_trust_badges %}
